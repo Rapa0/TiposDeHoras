@@ -1,0 +1,23 @@
+<header class="header">
+  <div class="header-content">
+    <div class="left-box">
+      <h1 class="logo">Relojes</h1>
+      <nav class="nav-links">
+        <a routerLink="/" class="nav-btn">Inicio</a>
+        <a [routerLink]="user ? '/relojes' : '/login'" class="nav-btn">Relojes</a>
+      </nav>
+    </div>
+
+    <div class="user-box">
+      <ng-container *ngIf="user as u; else noUser">
+        <span class="welcome">
+          Bienvenido, {{ u.email ? u.email : 'Usuario sin email' }}
+        </span>
+        <button class="logout-btn" (click)="logout.emit()">Cerrar Sesión</button>
+      </ng-container>
+      <ng-template #noUser>
+        <a routerLink="/login" class="nav-btn">Logearse</a>
+      </ng-template>
+    </div>
+  </div>
+</header>

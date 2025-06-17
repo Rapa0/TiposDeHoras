@@ -1,0 +1,21 @@
+/* src/app/auth/login/login.component.css */
+/* Reutiliza los estilos de auth-container que definimos en WelcomeComponent */
+.auth-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+.auth-container input {
+  width: 100%; padding: 10px; margin-bottom: 12px; box-sizing: border-box;
+  border: 1px solid #ccc; border-radius: 4px;
+}
+.auth-container button {
+  width: 100%; padding: 10px; background: #007bff;
+  border: none; color: white; border-radius: 4px; cursor: pointer;
+}
+.auth-container button:hover { background: #0056b3; }
+.error { color: red; text-align: center; margin-top: 10px; }
+.link-text { text-align: center; margin-top: 10px; }
+.link-text a { color: #007bff; text-decoration: none; }

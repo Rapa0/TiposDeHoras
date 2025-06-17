@@ -1,0 +1,8 @@
+<div class="relojes-container">
+    <h2>Relojes</h2>
+    <div class="botones">
+      <button *ngFor="let id of relojes" (click)="navigateToReloj(id)">
+        Reloj {{ id }}
+      </button>
+    </div>
+  </div>

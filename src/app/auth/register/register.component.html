@@ -1,0 +1,15 @@
+<div class="auth-container">
+  <h2>Registro</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <input type="email" formControlName="email" placeholder="Correo electrónico" />
+    <input type="password" formControlName="password" placeholder="Contraseña" />
+    <input type="password" formControlName="confirmPassword" placeholder="Confirmar contraseña" />
+    <button type="submit">Registrarme</button>
+  </form>
+
+  <p *ngIf="errorMsg" class="error">{{ errorMsg }}</p>
+
+  <p class="link-text">
+    ¿Ya tienes cuenta? <a routerLink="/login">Inicia sesión aquí</a>
+  </p>
+</div>
