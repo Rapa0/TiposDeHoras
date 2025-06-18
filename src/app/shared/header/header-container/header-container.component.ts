@@ -7,7 +7,6 @@ import { AuthService } from '../../../auth/services/auth.service';
   standalone: true,
   imports: [HeaderPresentationComponent],
   templateUrl: './header-container.component.html',
-  styleUrls: ['./header-container.component.css']
 })
 export class HeaderContainerComponent {
   constructor(public auth: AuthService) {}

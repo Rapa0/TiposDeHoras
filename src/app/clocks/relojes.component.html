@@ -1,0 +1,22 @@
+<div class="page">
+  <div class="button-bar">
+    <button *ngFor="let id of ids"
+            (click)="toggle(id)"
+            [class.active]="selected === id">
+      Reloj {{ id }}
+    </button>
+  </div>
+
+  <div class="clock-holder" *ngIf="activeClock as cmp">
+    <ng-container *ngComponentOutlet="cmp"></ng-container>
+  </div>
+
+  <p class="coming" *ngIf="selected && !activeClock">
+    El Reloj {{ selected }} aún no está implementado.
+  </p>
+
+  <ng-container *ngIf="false">
+    <app-digital-clock></app-digital-clock>
+
+  </ng-container>
+</div>

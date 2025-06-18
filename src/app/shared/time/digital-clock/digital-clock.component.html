@@ -1,0 +1,11 @@
+<div class="clock-box">
+    <span class="digits">{{ display }}</span>
+  </div>
+  
+  <app-time-slider
+    [initialHours]="initialHours"
+    [initialMinutes]="initialMinutes"
+    [initialSeconds]="initialSeconds"
+    (timeChange)="display = fmt($event)"
+  >
+  </app-time-slider>

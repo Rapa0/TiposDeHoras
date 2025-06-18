@@ -1,0 +1,39 @@
+.page{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:2.5rem;
+  min-height:calc(100vh - 120px); 
+}
+
+/* -------- botones -------- */
+.button-bar{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:1rem;
+}
+.button-bar button{
+  padding:.6rem 1.3rem;
+  border:none;border-radius:6px;
+  background:#007bff;color:#fff;
+  cursor:pointer;
+  box-shadow:0 2px 6px rgba(0,0,0,.3);
+  transition:filter .2s;
+}
+.button-bar button:hover{ filter:brightness(1.1); }
+.button-bar button.active{ background:#0056d4; }
+
+/* -------- contenedor del reloj -------- */
+.clock-holder{
+  display:flex;
+  justify-content:center;
+  width:100%;
+}
+
+/* aviso “coming soon” */
+.coming{
+  font-style:italic;
+  color:#888;
+}

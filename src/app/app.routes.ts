@@ -1,22 +1,46 @@
 // src/app/app.routes.ts
 import { Routes } from '@angular/router';
-
-import { LoginComponent }           from './auth/login/login.component';
-import { RegisterComponent }        from './auth/register/register.component';
-import { ForgotPasswordComponent }  from './auth/forgot-password/forgot-password.component';
-import { WelcomeComponent }         from './shared/welcome.component';
-import { RelojesComponent }         from './relojes/relojes.component';
-import { AuthGuard }                from './auth/auth.guard';
+import { AuthGuard } from './auth/auth.guard';
 
 export const routes: Routes = [
-  { path: 'login',           component: LoginComponent },
-  { path: 'register',        component: RegisterComponent },
-  { path: 'forgot-password', component: ForgotPasswordComponent },
+  /* ---------- vistas públicas ---------- */
+  {
+    path: 'login',
+    loadComponent: () =>
+      import('./auth/login/login.component')
+        .then(m => m.LoginComponent)
+  },
+  {
+    path: 'register',
+    loadComponent: () =>
+      import('./auth/register/register.component')
+        .then(m => m.RegisterComponent)
+  },
+  {
+    path: 'forgot-password',
+    loadComponent: () =>
+      import('./auth/forgot-password/forgot-password.component')
+        .then(m => m.ForgotPasswordComponent)
+  },
+
+  /* ---------- vista protegida: 10 relojes ---------- */
   {
     path: 'relojes',
-    component: RelojesComponent,
+    loadComponent: () =>
+      import('./clocks/relojes.component')
+        .then(m => m.RelojesComponent),
     canActivate: [AuthGuard]
   },
-  { path: '',                 component: WelcomeComponent },
-  { path: '**',               redirectTo: '' }
+
+  /* ---------- página de bienvenida ---------- */
+  {
+    path: '',
+    loadComponent: () =>
+      import('./shared/welcome.component')
+        .then(m => m.WelcomeComponent),
+    pathMatch: 'full'
+  },
+
+  /* ---------- wildcard ---------- */
+  { path: '**', redirectTo: '' }
 ];

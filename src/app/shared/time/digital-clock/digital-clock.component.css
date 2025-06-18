@@ -1,0 +1,17 @@
+.clock-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem 3.5rem;
+    background: #111;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  }
+  
+  .digits {
+    font-family: 'Courier New', monospace;
+    font-size: 3.2rem;
+    color: #0f0;
+    letter-spacing: .12rem;
+    text-shadow: 0 0 10px #0f0;
+  }

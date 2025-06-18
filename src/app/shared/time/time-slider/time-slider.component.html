@@ -1,0 +1,47 @@
+<aside class="panel">
+  <h3>Ajustar tiempo</h3>
+  
+  <!-- Muestra los offsets actuales -->
+  <div class="offset-display">
+    <div class="offset-item">
+      <span>Horas:</span>
+      <span>{{ offsetHours > 0 ? '+' : '' }}{{ offsetHours }}</span>
+    </div>
+    <div class="offset-item">
+      <span>Minutos:</span>
+      <span>{{ offsetMinutes > 0 ? '+' : '' }}{{ offsetMinutes }}</span>
+    </div>
+    <div class="offset-item">
+      <span>Segundos:</span>
+      <span>{{ offsetSeconds > 0 ? '+' : '' }}{{ offsetSeconds }}</span>
+    </div>
+  </div>
+  
+  <!-- Muestra la hora local y la hora ajustada -->
+  <div class="times">
+    <div class="time-row">
+      <span>Local:</span>
+      <strong>{{ localStr }}</strong>
+    </div>
+    <div class="time-row">
+      <span>Ajustada:</span>
+      <strong>{{ adjStr }}</strong>
+    </div>
+  </div>
+  
+  <!-- Controles para ajustar horas, minutos y segundos -->
+  <div class="sliders">
+    <div class="slider-group">
+      <label>Horas</label>
+      <input type="range" min="-12" max="12" step="1" [(ngModel)]="offsetHours">
+    </div>
+    <div class="slider-group">
+      <label>Minutos</label>
+      <input type="range" min="-60" max="60" step="1" [(ngModel)]="offsetMinutes">
+    </div>
+    <div class="slider-group">
+      <label>Segundos</label>
+      <input type="range" min="-60" max="60" step="1" [(ngModel)]="offsetSeconds">
+    </div>
+  </div>
+</aside>

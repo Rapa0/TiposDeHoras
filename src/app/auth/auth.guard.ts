@@ -1,32 +1,28 @@
-// src/app/auth/auth.guard.ts
 import { Injectable } from '@angular/core';
 import {
-  CanActivate,
-  Router,
-  ActivatedRouteSnapshot,
-  RouterStateSnapshot,
-  UrlTree
+  CanActivate, Router, UrlTree,
+  ActivatedRouteSnapshot, RouterStateSnapshot
 } from '@angular/router';
-import { AuthService } from './services/auth.service';  // tu servicio de autenticación
+import { firstValueFrom } from 'rxjs';
+import { AuthService } from './services/auth.service';
 
 @Injectable({ providedIn: 'root' })
 export class AuthGuard implements CanActivate {
-  constructor(
-    private auth: AuthService,
-    private router: Router
-  ) {}
+  constructor(private auth: AuthService, private router: Router) {}
 
-  canActivate(
-    route: ActivatedRouteSnapshot,
+  async canActivate(
+    _route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): boolean | UrlTree {
-    // Supongamos que your AuthService expone currentUser o isLoggedIn
-    if (this.auth.currentUser) {
-      return true;   // puede acceder
-    }
-    // No está logeado → redirige a login, puedes pasar returnUrl si lo deseas
-    return this.router.createUrlTree(['/login'], {
-      queryParams: { returnUrl: state.url }
-    });
+  ): Promise<boolean | UrlTree> {
+
+    // espera a que Firebase emita su primer authState
+    await firstValueFrom(this.auth.ready$);
+
+    return this.auth.currentUser
+      ? true
+      : this.router.createUrlTree(
+          ['/login'],
+          { queryParams: { returnUrl: state.url } }
+        );
   }
 }

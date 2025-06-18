@@ -1,0 +1,28 @@
+<div class="clock-wrapper">
+    <!-- Incluimos el slider que dispara onTimeChange cada segundo -->
+    <app-time-slider
+      [initialHours]="0"
+      [initialMinutes]="0"
+      [initialSeconds]="0"
+      (timeChange)="onTimeChange($event)">
+    </app-time-slider>
+  
+    <!-- Nuestra visualización de barras -->
+    <div class="clock-container">
+      <div class="clock-title">Bar Clock</div>
+      <div class="bars-container">
+        <div class="bar hour-bar">
+          <div class="bar-fill" [style.height.%]="hourPercent"></div>
+          <span class="bar-label">Horas: {{ currentTime.getHours() }}</span>
+        </div>
+        <div class="bar minute-bar">
+          <div class="bar-fill" [style.height.%]="minutePercent"></div>
+          <span class="bar-label">Minutos: {{ currentTime.getMinutes() }}</span>
+        </div>
+        <div class="bar second-bar">
+          <div class="bar-fill" [style.height.%]="secondPercent"></div>
+          <span class="bar-label">Segundos: {{ currentTime.getSeconds() }}</span>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { CommonModule } from '@angular/common';    // Para *ngIf, etc.
-import { RouterModule } from '@angular/router';      // Para routerLink
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header-presentation',
@@ -10,8 +10,7 @@ import { RouterModule } from '@angular/router';      // Para routerLink
   styleUrls: ['./header-presentation.component.css']
 })
 export class HeaderPresentationComponent {
-  // Se permite que email pueda ser string o null
+  // Permite que user sea null (cuando no hay usuario) o tenga la propiedad email
   @Input() user: { email: string | null } | null = null;
-  
   @Output() logout = new EventEmitter<void>();
 }
