@@ -1,0 +1,45 @@
+<div class="constellation-clock-container">
+      <svg viewBox="0 0 1200 400" class="constellation-svg">
+      <!-- Cluster de Horas (24 estrellas) -->
+      <g transform="translate(20,20)">
+        <rect x="0" y="0" width="350" height="350" fill="none" stroke="#444" stroke-dasharray="4,2"></rect>
+        <g>
+          <circle *ngFor="let star of hoursStars; let i = index"
+                  [attr.cx]="star.x"
+                  [attr.cy]="star.y"
+                  r="4"
+                  [attr.fill]=" i < currentHour ? '#ffce00' : '#222' ">
+          </circle>
+        </g>
+      </g>
+      
+      <!-- Cluster de Minutos (60 estrellas) -->
+      <g transform="translate(410,20)">
+        <rect x="0" y="0" width="350" height="350" fill="none" stroke="#444" stroke-dasharray="4,2"></rect>
+        <g>
+          <circle *ngFor="let star of minutesStars; let i = index"
+                  [attr.cx]="star.x"
+                  [attr.cy]="star.y"
+                  r="3.5"
+                  [attr.fill]=" i < currentMinute ? '#00b5ff' : '#222' ">
+          </circle>
+        </g>
+      </g>
+      
+      <!-- Cluster de Segundos (60 estrellas) -->
+      <g transform="translate(800,20)">
+        <rect x="0" y="0" width="350" height="350" fill="none" stroke="#444" stroke-dasharray="4,2"></rect>
+        <g>
+          <circle *ngFor="let star of secondsStars; let i = index"
+                  [attr.cx]="star.x"
+                  [attr.cy]="star.y"
+                  r="3"
+                  [attr.fill]=" i < currentSecond ? '#c800ff' : '#222' ">
+          </circle>
+        </g>
+      </g>
+    </svg>
+  </div>
+  
+  <!-- Slider para ajustar la hora -->
+  <app-time-slider (timeChange)="onTimeChange($event)"></app-time-slider>

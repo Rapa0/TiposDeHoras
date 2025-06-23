@@ -1,0 +1,7 @@
+<div class="ripple-clock-container">
+    <!-- Canvas para dibujar el "Ripple Clock" -->
+    <canvas #canvas></canvas>
+    
+    <!-- Slider para modificar la hora -->
+    <app-time-slider (timeChange)="onTimeChange($event)"></app-time-slider>
+  </div>

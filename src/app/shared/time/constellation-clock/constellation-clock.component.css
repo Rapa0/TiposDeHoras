@@ -1,0 +1,19 @@
+.constellation-clock-container {
+    background: #000;
+    margin: 0 auto;
+    width: auto;
+    text-align: center;
+    padding: 0;
+  }
+  
+  .digital-display {
+    display: none; 
+  }
+  
+  .constellation-svg {
+    width: 1150px; 
+    height: auto;
+    display: block;
+    background: #111;
+    border-radius: 4px;
+  }

@@ -1,0 +1,15 @@
+.ripple-clock-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #001;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  canvas {
+    width: 100%;
+    display: block;
+    background: #001;
+    border: 1px solid #333;
+  }
