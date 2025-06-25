@@ -1,0 +1,31 @@
+<div class="tree-ring-container">
+    <svg [attr.width]="size" [attr.height]="size">
+      <rect width="100%" height="100%" fill="#111" rx="8"/>
+  
+      <circle
+        [attr.cx]="cx" [attr.cy]="cy" [attr.r]="radii[0]"
+        class="ring hour-ring"
+        [attr.stroke-dasharray]="2 * Math.PI * radii[0]"
+        [attr.stroke-dashoffset]="dashOffset(radii[0], hourFrac)" />
+  
+      <circle
+        [attr.cx]="cx" [attr.cy]="cy" [attr.r]="radii[1]"
+        class="ring minute-ring"
+        [attr.stroke-dasharray]="2 * Math.PI * radii[1]"
+        [attr.stroke-dashoffset]="dashOffset(radii[1], minuteFrac)" />
+  
+      <circle
+        [attr.cx]="cx" [attr.cy]="cy" [attr.r]="radii[2]"
+        class="ring second-ring"
+        [attr.stroke-dasharray]="2 * Math.PI * radii[2]"
+        [attr.stroke-dashoffset]="dashOffset(radii[2], secondFrac)" />
+  
+      <circle
+        [attr.cx]="secondMarker.x"
+        [attr.cy]="secondMarker.y"
+        r="6"
+        class="second-marker" />
+    </svg>
+  </div>
+  
+  <app-time-slider (timeChange)="onTimeChange($event)"></app-time-slider>

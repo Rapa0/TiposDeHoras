@@ -1,0 +1,33 @@
+<div class="honeycomb-clock-container">
+    <div class="clock-section">
+      <div class="section-label">Hours</div>
+      <div class="hex-grid hours-grid">
+        <div *ngFor="let cell of hoursArray; let i = index"
+             class="hex-cell"
+             [class.active]="i < hours">
+        </div>
+      </div>
+    </div>
+    
+    <div class="clock-section">
+      <div class="section-label">Minutes</div>
+      <div class="hex-grid minutes-grid">
+        <div *ngFor="let cell of minutesArray; let i = index"
+             class="hex-cell"
+             [class.active]="i < minutes">
+        </div>
+      </div>
+    </div>
+    
+    <div class="clock-section">
+      <div class="section-label">Seconds</div>
+      <div class="hex-grid seconds-grid">
+        <div *ngFor="let cell of secondsArray; let i = index"
+             class="hex-cell"
+             [class.active]="i < seconds">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <app-time-slider (timeChange)="onTimeChange($event)"></app-time-slider>

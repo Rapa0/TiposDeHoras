@@ -1,0 +1,59 @@
+.honeycomb-clock-container {
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+    font-family: sans-serif;
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+  }
+  
+  .digital-time {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .clock-section {
+    margin-bottom: 20px;
+  }
+  
+  .section-label {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+  
+  .hex-grid {
+    display: grid;
+    grid-gap: 5px;
+    justify-content: center;
+  }
+  
+  /* Para la grilla de horas, usamos 6 columnas (4 filas de 24) */
+  .hours-grid {
+    grid-template-columns: repeat(6, 40px);
+  }
+  
+  /* Para minutos y segundos, 10 columnas para 60 celdas (6 filas) */
+  .minutes-grid,
+  .seconds-grid {
+    grid-template-columns: repeat(10, 30px);
+  }
+  
+  .hex-cell {
+    width: 40px;
+    height: 40px;
+    background: #444;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    transition: background 0.3s;
+  }
+  
+  .minutes-grid .hex-cell,
+  .seconds-grid .hex-cell {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .hex-cell.active {
+    background: #ffce00;
+  }

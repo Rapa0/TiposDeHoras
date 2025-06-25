@@ -1,0 +1,28 @@
+.tree-ring-container {
+    width: 300px;
+    margin: 20px auto;
+  }
+  
+  .ring {
+    fill: none;
+    stroke-width: 12;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.2s linear;
+  }
+  
+  .hour-ring {
+    stroke: #8B4513;
+  }
+  .minute-ring {
+    stroke: #228B22;
+  }
+  .second-ring {
+    stroke: #1E90FF;
+  }
+  
+  .second-marker {
+    fill: #1E90FF;
+    stroke: #fff;
+    stroke-width: 2;
+    transition: cx 0.05s linear, cy 0.05s linear;
+  }

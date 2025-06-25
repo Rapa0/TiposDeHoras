@@ -1,0 +1,34 @@
+<div class="hourglass-clock-container">
+    <div class="hourglass-block">
+      <svg width="60" height="110">
+        <polygon points="0,0 60,0 30,55" stroke="#fff" fill="none" stroke-width="1"/>
+        <polygon points="0,110 60,110 30,55" stroke="#fff" fill="none" stroke-width="1"/>
+        <polygon [attr.points]="getTopFillPoints(hourPct)" fill="#ffce00"/>
+        <polygon [attr.points]="getBottomFillPoints(hourPct)" fill="#ffce00"/>
+      </svg>
+      <div class="label">Hours</div>
+    </div>
+  
+    <div class="hourglass-block">
+      <svg width="60" height="110">
+        <polygon points="0,0 60,0 30,55" stroke="#fff" fill="none" stroke-width="1"/>
+        <polygon points="0,110 60,110 30,55" stroke="#fff" fill="none" stroke-width="1"/>
+        <polygon [attr.points]="getTopFillPoints(minutePct)" fill="#00b5ff"/>
+        <polygon [attr.points]="getBottomFillPoints(minutePct)" fill="#00b5ff"/>
+      </svg>
+      <div class="label">Minutes</div>
+    </div>
+  
+    <div class="hourglass-block">
+      <svg width="60" height="110">
+        <polygon points="0,0 60,0 30,55" stroke="#fff" fill="none" stroke-width="1"/>
+        <polygon points="0,110 60,110 30,55" stroke="#fff" fill="none" stroke-width="1"/>
+        <polygon [attr.points]="getTopFillPoints(secondPct)" fill="#c800ff"/>
+        <polygon [attr.points]="getBottomFillPoints(secondPct)" fill="#c800ff"/>
+      </svg>
+      <div class="label">Seconds</div>
+    </div>
+  </div>
+  
+  <!-- Slider para ajustar la hora -->
+  <app-time-slider (timeChange)="onTimeChange($event)"></app-time-slider>

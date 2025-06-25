@@ -1,7 +1,7 @@
 <div class="segment-clock-container">
     <svg viewBox="0 0 300 300">
       <g transform="translate(150,150)">
-        <!-- Horas (radio 80), 24 segmentos -->
+  
         <g *ngFor="let i of H24">
           <rect
             [attr.transform]="'rotate(' + (i * 15) + ') translate(80, -5)'"
@@ -9,7 +9,7 @@
             [attr.fill]="i < hours ? '#ffce00' : '#444'"
           />
         </g>
-        <!-- Minutos (radio 100), 60 segmentos -->
+    
         <g *ngFor="let i of M60">
           <rect
             [attr.transform]="'rotate(' + (i * 6) + ') translate(100, -4)'"
@@ -17,7 +17,7 @@
             [attr.fill]="i < minutes ? '#00b5ff' : '#444'"
           />
         </g>
-        <!-- Segundos (radio 120), 60 segmentos -->
+  
         <g *ngFor="let i of S60">
           <rect
             [attr.transform]="'rotate(' + (i * 6) + ') translate(120, -3)'"
@@ -25,15 +25,8 @@
             [attr.fill]="i < seconds ? '#c800ff' : '#444'"
           />
         </g>
-        <!-- Centro: hora digital -->
-        <text y="5" text-anchor="middle" class="center-text">
-          {{ hours.toString().padStart(2,'0') }}:
-          {{ minutes.toString().padStart(2,'0') }}:
-          {{ seconds.toString().padStart(2,'0') }}
-        </text>
       </g>
     </svg>
-  
-    <!-- Slider -->
+
     <app-time-slider (timeChange)="onTimeChange($event)"></app-time-slider>
   </div>

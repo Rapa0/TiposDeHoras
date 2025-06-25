@@ -4,6 +4,11 @@ import { UniqueClockComponent } from '../shared/time/unique-clock/unique-clock.c
 import { RippleClockComponent } from '../shared/time/ripple-clock/ripple-clock.component';
 import { SegmentClockComponent } from '../shared/time/segment-clock/segment-clock.component';
 import { ConstellationClockComponent } from '../shared/time/constellation-clock/constellation-clock.component';
+import { HourglassClockComponent } from '../shared/time/hourglass-clock/hourglass-clock.component';
+import { HoneycombClockComponent } from '../shared/time/honeycomb-clock/honeycomb-clock.component';
+import { WordClockComponent } from '../shared/time/word-clock/word-clock.component';
+import { TreeRingClockComponent } from '../shared/time/tree-ring-clock/tree-ring-clock.component';
+
 
 export const CLOCK_REGISTRY: Record<number, Type<unknown> | undefined> = {
   1: DigitalClockComponent,
@@ -11,5 +16,9 @@ export const CLOCK_REGISTRY: Record<number, Type<unknown> | undefined> = {
   3: RippleClockComponent,
   4: SegmentClockComponent,
   5: ConstellationClockComponent,
-  // Otros relojes (6, 7, …) conforme a nuevas ideas.
+  6: HourglassClockComponent,
+  7: HoneycombClockComponent,
+  8: WordClockComponent,
+  9: TreeRingClockComponent
+
 };

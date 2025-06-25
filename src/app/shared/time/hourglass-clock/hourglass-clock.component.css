@@ -1,0 +1,21 @@
+.hourglass-clock-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 320px;
+    margin: 20px auto;
+    background: #222;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .hourglass-block {
+    text-align: center;
+  }
+  
+  .label {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #fff;
+    font-family: sans-serif;
+  }
