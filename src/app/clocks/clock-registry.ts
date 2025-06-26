@@ -8,6 +8,8 @@ import { HourglassClockComponent } from '../shared/time/hourglass-clock/hourglas
 import { HoneycombClockComponent } from '../shared/time/honeycomb-clock/honeycomb-clock.component';
 import { WordClockComponent } from '../shared/time/word-clock/word-clock.component';
 import { TreeRingClockComponent } from '../shared/time/tree-ring-clock/tree-ring-clock.component';
+import { OffsetClockComponent }        from '../shared/time/offset-clock/offset-clock.component';
+
 
 
 export const CLOCK_REGISTRY: Record<number, Type<unknown> | undefined> = {
@@ -19,6 +21,7 @@ export const CLOCK_REGISTRY: Record<number, Type<unknown> | undefined> = {
   6: HourglassClockComponent,
   7: HoneycombClockComponent,
   8: WordClockComponent,
-  9: TreeRingClockComponent
+  9: TreeRingClockComponent,
+  10: OffsetClockComponent
 
 };

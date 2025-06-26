@@ -1,0 +1,48 @@
+.offset-container {
+    width: 260px;
+    margin: 20px auto;
+    background: #111;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .clock-face {
+    display: block;
+    margin: auto;
+  }
+  
+  .dial {
+    fill: #222;
+    stroke: #555;
+    stroke-width: 2;
+  }
+  
+  .major-tick {
+    stroke: #888;
+    stroke-width: 2;
+  }
+  
+  .hand {
+    stroke-linecap: round;
+  }
+  
+  .hour-hand {
+    stroke: #f0f0f0;
+    stroke-width: 4;
+  }
+  
+  .minute-hand {
+    stroke: #d0d0d0;
+    stroke-width: 3;
+  }
+  
+  .second-hand {
+    stroke: #e74c3c;
+    stroke-width: 2;
+  }
+  
+  .hub {
+    fill: #eee;
+    stroke: #444;
+    stroke-width: 1;
+  }

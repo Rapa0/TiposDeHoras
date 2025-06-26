@@ -1,0 +1,30 @@
+<div class="offset-container">
+    <svg viewBox="0 0 200 200" class="clock-face">
+      <circle cx="100" cy="100" r="98" class="dial" />
+  
+      <g *ngFor="let tick of [0,1,2,3,4,5,6,7,8,9,10,11]">
+        <line
+          [attr.transform]="'rotate(' + (tick*30) + ' 100 100)'"
+          x1="100" y1="10" x2="100" y2="20"
+          class="major-tick" />
+      </g>
+  
+      <line
+        class="hand hour-hand"
+        [attr.transform]="'rotate(' + hourDeg + ' 100 100)'"
+        x1="100" y1="100" x2="100" y2="55" />
+  
+      <line
+        class="hand minute-hand"
+        [attr.transform]="'rotate(' + minuteDeg + ' 100 100)'"
+        x1="100" y1="100" x2="100" y2="40" />
+  
+      <line
+        class="hand second-hand"
+        [attr.transform]="'rotate(' + secondDeg + ' 100 100)'"
+        x1="100" y1="100" x2="100" y2="25" />
+  
+      <circle cx="100" cy="100" r="4" class="hub"/>
+    </svg>
+  </div>
+  <app-time-slider (timeChange)="onTimeChange($event)"></app-time-slider>
